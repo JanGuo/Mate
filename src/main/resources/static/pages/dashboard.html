@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../css/global.css" media="all"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="admin-main">
+    <div class="pull-left">
+        <h2>
+            <h9>点这里 --></h9>
+            <a href="http://59.110.215.208/pages/mate/addmate.html/">信息填写</a></h2>
+        <br>
+        <h2>
+            <h9>点这里 --></h9>
+            <a href="http://59.110.215.208/pages/mate/getallmate.html/">查看所有人员信息</a></h2>
+    </div>
+
+    <form id="form" action="" method="" target="nm_iframe">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-8"></div>
+                <div class="col-xs-6 col-md-4 pull-right">
+                    <!--<input type="button" value="查看" class="btn btn-default"onclick="getall()">-->
+                    <div class="col-md-4 col-md-pull-0"><b>城市</b></div>
+                    <div class="col-md-5 col-md-pull-0" id="area_2"><input class="inputcitynm" name="inputcitynm" id="inputcitynm" style="width:40px;" type="text"></div>
+                    <div class="col-md-4 col-md-pull-0"><b>星期</b></div>
+                    <div class="col-md-5 col-md-pull-0" id="week"></div>
+                    <div class="col-md-4 col-md-pull-0"><b>天气</b></div>
+                    <div class="col-md-5 col-md-pull-0" id="wtNm"></div>
+                    <div class="col-md-4 col-md-pull-0"><b>最高温度</b></div>
+                    <div class="col-md-5 col-md-pull-0" id="wtTemp1"></div>
+                    <div class="col-md-4 col-md-pull-0"><b>最低温度</b></div>
+                    <div class="col-md-5 col-md-pull-0" id="wtTemp2"></div>
+                    <div class="col-md-4 col-md-pull-0"><b>风向</b></div>
+                    <div class="col-md-5 col-md-pull-0" id="wtWindNm"></div>
+                    <div class="col-md-4 col-md-pull-0"><b>风级</b></div>
+                    <div class="col-md-5 col-md-pull-0" id="wtWinpNm1"></div>
+                    <div class="col-md-4 col-md-pull-0"><b>日出</b></div>
+                    <div class="col-md-5 col-md-pull-0" id="wtSunr"></div>
+                    <div class="col-md-4 col-md-pull-0"><b>日落</b></div>
+                    <div class="col-md-5 col-md-pull-0" id="wtSuns"></div>
+                    <button type="submit" class="layui-upload-button" onclick="updata()">查看城市天气</button>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+    <div id="one" class="aaa"></div>
+    <div>
+        <!--<blockquote class="layui-elem-quote">-->
+        <!--<fieldset class="layui-elem-field">-->
+        <!--<legend>说明：</legend>-->
+        <!--<div class="layui-field-box">-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>spring security 全注解式的权限管理-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>动态配置权限，角色和资源，权限控制到按钮粒度-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>采用token进行权限校验，禁用session，未登录返回401，权限不足返回403-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>采用redis存储token及权限信息-->
+        <!--</p>-->
+        <!--</div>-->
+        <!--</fieldset>-->
+        <!--</blockquote>-->
+        <!--<blockquote class="layui-elem-quote">-->
+        <!--<fieldset class="layui-elem-field">-->
+        <!--<legend>内置功能：</legend>-->
+        <!--<div class="layui-field-box">-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>用户管理：用户查询、添加用户、修改用户、给用户分配角色-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>菜单管理：菜单列表、添加菜单、修改菜单、删除菜单、权限配置、菜单图标设置、菜单排序-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>角色管理：角色查询、添加角色、修改角色、删除角色-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>代码生成：根据表名生成bean、controller、dao、Mapper.xml、列表页、搜索、分页、新增页、修改页-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>job集群：创建job、取消job、查询job、下拉搜索spring bean-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>数据源监控：druid-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>接口swagger文档-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>日志查询-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>邮件管理：发送邮件、搜索邮件-->
+        <!--</p>-->
+
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>文件管理：上传文件、文件列表、文件删除-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>公告管理：公告未读提醒、发布公告、查询公告、公告阅读人列表-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>excel下载：自定义sql导出excel、也可在页面展示sql结果数据-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>字典管理：一些常量字典的维护-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>个人信息修改-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>修改密码-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>头像修改-->
+        <!--</p>-->
+        <!--</div>-->
+        <!--</fieldset>-->
+        <!--</blockquote>-->
+        <!--<blockquote class="layui-elem-quote">-->
+        <!--<fieldset class="layui-elem-field">-->
+        <!--&lt;!&ndash;<legend>其他说明：</legend>&ndash;&gt;-->
+        <!--&lt;!&ndash;</h2>&ndash;&gt;-->
+        <!--<div class="layui-field-box"-->
+        <!--style="margin: 0.0px; padding: 10.0px 15.0px; color: #000000; background-color: #f2f2f2;">-->
+
+
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>日志模块-->
+        <!--</p>-->
+        <!--<p>&nbsp;&nbsp;&nbsp; sl4j日志分包：将sql日志、业务日志、异常日志进行了分离，更方便定位问题</p>-->
+        <!--<p>&nbsp;&nbsp;&nbsp; 日志表：使用aop拦截实现</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>权限控制：基于token方式，禁用session-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>对各种不同异常进行了全局统一处理-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>使用lombok简化java代码，让源码更简洁，可读性高-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>mybatis未进行二次封装，原滋原味，简单sql采用注解，复杂sql采用Mapper.xml配置-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>使用了layui的弹出层、菜单、文件上传、富文本编辑、日历、选项卡、数据表格等-->
+        <!--</p>-->
+        <!--<p>-->
+        <!--<span class="layui-badge-dot"></span>表单数据采用bootstrapValidator校验，简单快捷方便-->
+        <!--</p>-->
+        <!--</fieldset>-->
+        <!--</blockquote>-->
+    </div>
+</div>
+<script type="text/javascript" src="../js/libs/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/jq.js"></script>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
+<script type="text/javascript">
+    layui.use('layer', function () {
+        var layer = layui.layer;
+    });
+    $(document).ready(function () {
+        console.log(getCookie("AAA"));
+        if(getCookie("AAA") == null){
+            setCookie("AAA","aaa",1);
+            init();
+        }else {
+            console.log("更新");
+            //updata();
+            init();
+            delCookie("AAA")
+        }
+        //init();
+    });
+
+    function setCookie(name, value, day) {
+            if (day !== 0) {     //当设置的时间等于0时，不设置expires属性，cookie在浏览器关闭后删除
+                var expires = day * 24 * 60 * 60 * 1000;
+                var date = new Date(+new Date() + expires);
+                document.cookie = name + "=" + escape(value) + ";expires=" + date.toUTCString();
+            } else {
+                document.cookie = name + "=" + escape(value);
+            }
+
+    }
+
+    function getCookie(name) {
+            var arr;
+            var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg))
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+
+    function delCookie(name) {
+                setCookie(name, ' ', -1);
+        }
+
+
+    function updata() {
+        $.ajax({
+                type: 'POST',
+                url: '/weather',
+                async: false,
+                //dataType: "json",
+                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                data: $("#form").serialize(),
+                success: function (result) {
+                    console.log(result);
+                    document.getElementById("week").innerHTML = result.week;
+                    // var city = document.createElement("input");
+                    // city.value = result.area_2;
+                    // city.style = "width: 40px";
+                    // city.id = "inputcitynm";
+                    // city.name = "inputcitynm";
+                    // document.getElementById("area_2").append(city);
+
+                    document.getElementById("inputcitynm").value = result.area_2;
+                    document.getElementById("wtNm").innerHTML = result.wtNm;
+                    document.getElementById("wtTemp1").innerHTML = result.wtTemp1;
+                    document.getElementById("wtTemp2").innerHTML = result.wtTemp2;
+                    document.getElementById("wtWindNm").innerHTML = result.wtWindNm;
+                    document.getElementById("wtWinpNm1").innerHTML = result.wtWinpNm1;
+                    document.getElementById("wtSunr").innerHTML = result.wtSunr;
+                    document.getElementById("wtSuns").innerHTML = result.wtSuns;
+                }
+            }
+        );
+    }
+
+    function init() {
+        $.ajax({
+                type: 'GET',
+                url: '/weather',
+                //async: false,
+                //dataType: "json",
+                contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                data: $("#form").serialize(),
+                success: function (result) {
+                    console.log(result);
+                    document.getElementById("week").innerHTML = result.week;
+                    // var city = document.createElement("input");
+                    // city.value = result.area_2;
+                    // city.style = "width: 40px";
+                    // city.id = "inputcitynm";
+                    // city.name = "inputcitynm";
+                    // document.getElementById("area_2").append(city);
+                    document.getElementById("inputcitynm").value = result.area_2;
+                    document.getElementById("wtNm").innerHTML = result.wtNm;
+                    document.getElementById("wtTemp1").innerHTML = result.wtTemp1;
+                    document.getElementById("wtTemp2").innerHTML = result.wtTemp2;
+                    document.getElementById("wtWindNm").innerHTML = result.wtWindNm;
+                    document.getElementById("wtWinpNm1").innerHTML = result.wtWinpNm1;
+                    document.getElementById("wtSunr").innerHTML = result.wtSunr;
+                    document.getElementById("wtSuns").innerHTML = result.wtSuns;
+                }
+            }
+        );
+
+    }
+
+
+    // function getall() {
+    // 	init();
+    //
+    // }
+
+    // document.onkeydown = function (ev) {
+    // 	var e = ev|| window.event;
+    // 	if (e&& e.key === 13){
+    // 		var upinputcitynm = document.getElementById(inputcitynm);
+    // 		console.log(upinputcitynm);
+    // 		updata();
+    // 	}
+    // }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../../css/bootstrap.min.css">
+    <title>Janguo</title>
+</head>
+<body>
+
+<div class="page-header text-center">
+    <h1>欢迎来到Janguo城 <small>这是所有的信息</small></h1>
+    <br/>
+    <!--<h2><h9>记得先登录哦!</h9><a href="http://59.110.215.208">登陆</a></h2>-->
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   <input type="button" value="查看" class="btn btn-default"onclick="getall()">
+    <table id="tab" class="table">
+        <thead>
+            <tr  class="active"><td>姓名</td><td>性别</td><td>大学</td><td>省份</td><td>专业</td><td>电话</td><td>QQ</td></tr>
+        </thead>
+        <tbody id="content">
+
+        </tbody>
+
+        <tr id="tr1"></tr>
+    </table>
+</div>
+<script type="text/javascript" src="../../../js/libs/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../../js/jq.js"></script>
+<script type="text/javascript" src="../../../layui/layui.js"></script>
+<script type="text/javascript" src="../../../js/plugin/bootstrapvalidator/bootstrapValidator.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //getToken()
+    });
+</script>
+<script type="text/javascript">
+    layui.use('layer', function(){
+        var layer = layui.layer;
+    });
+    //getToken();
+    //var formdata = $("#form").serializeObject();
+    function init() {
+        $.ajax({
+            type: 'GET',
+            url: '/mate',
+            async: false,
+            dataType : "json",
+            contentType : "application/x-www-form-urlencoded;charset=UTF-8",
+            success: function (result) {
+                console.log(result);
+                var content=document.getElementById("content");
+                for (var i=0;i<result.length;i++){
+                    console.log(result[i].username);
+                    var tr = document.createElement('tr');
+                    var td1 = document.createElement('td');
+                    td1.innerHTML=result[i].username;
+                    var td2 = document.createElement('td');
+                    td2.innerHTML=result[i].sex;
+                    var td3 = document.createElement('td');
+                    td3.innerHTML=result[i].college;
+                    var td4 = document.createElement('td');
+                    td4.innerHTML=result[i].cprovince;
+                    var td5 = document.createElement('td');
+                    td5.innerHTML=result[i].major;
+                    var td6 = document.createElement('td');
+                    td6.innerHTML=result[i].phone;
+                    var td7 = document.createElement('td');
+                    td7.innerHTML=result[i].qq;
+                    // var tb = result[i].username;
+                    tr.append(td1);
+                    tr.append(td2);
+                    tr.append(td3);
+                    tr.append(td4);
+                    tr.append(td5);
+                    tr.append(td6);
+                    tr.append(td7);
+
+                    content.append(tr);
+
+                    var row = result.length;
+                }
+            }
+        });
+    }
+
+    function getToken(){
+        var strcookie = document.cookie;//获取cookie字符串
+        var arrcookie = strcookie.split("; ");//分割
+        //遍历匹配
+        for ( var i = 0; i < arrcookie.length; i++) {
+            var arr = arrcookie[i].split("=");
+            if (arr[0] == "token"){
+            }else {
+                window.location.href="http://59.110.215.208";
+            }
+        }
+    }
+
+
+    function getall() {
+        init();
+
+    }
+
+</script>
+
+</body>
+</html>
